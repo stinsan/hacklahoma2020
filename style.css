@@ -75,18 +75,19 @@ h1{ /* Headers */
 
 .panel_buttons{ /* Panel buttons containing expand and minimize*/
   position: absolute;
-  left: 1400px;
-  top: 60px;
+  left: 82%;
+  top: 6%;
   font-size: 20px;
   background-color: #bfb;
-  border-radius: 10px;
-
+  border-radius: 10px 0px 0px 10px;
+  height: 10%;
 }
 
 .max_button:hover{
   cursor: pointer;
 }
-.max_button{
+
+.max_button{/** Set max button to first be hidden **/
   visibility: hidden;
 }
 
@@ -176,10 +177,35 @@ h1{ /* Headers */
   width:100%;
 }
 
+#run_button {
+  background-color:#bfb;
+  width:35%;
+  font-size: 40px;
+  font-family: sans-serif, Arial;
+  border: 2px solid #bfb;
+}
+
+#run_button:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 .settings_info {
   margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   width:100%;
+}
+
+#info_button {
+  background-color:#bfb;
+  border-radius: 50%;
+  width:20%;
+  height:20%;
+  font-size: 30px;
+  border: 2px solid #bfb;
+}
+
+#info_button:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
