@@ -67,13 +67,25 @@ var View = {
       ];
   },
 
-  setUnwalkable: function(gridX, gridY, grid, color, image) {
+  setUnwalkable: function(gridX, gridY, grid, color, type) {
     context = this.context;
     nodeSize = this.nodeSize;
     pageCoords = View.toPageCoordinate(gridX, gridY);
 
-    context.fillStyle = color;
-    context.fillRect(pageCoords[0], pageCoords[1], nodeSize, nodeSize);
+    if (type != 'wall') {
+      context.fillStyle = color;
+      context.fillRect(pageCoords[0], pageCoords[1], nodeSize, nodeSize);
+    }
+
+    if (type == 'wall') {
+      base_image = new Image();
+      base_image.src = 'art/pencil_wall.png';
+      var xPos = pageCoords[0];
+      var yPos = pageCoords[1];
+      base_image.onload = function(){
+          context.drawImage(base_image, xPos, yPos);
+      }
+    }
 
     grid.setWalkableAt(gridX, gridY, false);
   },
@@ -83,7 +95,7 @@ var Controller = {
   initGrid: function(width, height) {
     var matrix = [];
 
-    for (var i = 0; i < height; i++) {
+    for (var i = 0;   i < height; i++) {
       matrix[i] = [];
       for (var j = 0; j < width; j++) {
         matrix[i][j] = 0;
@@ -98,6 +110,4 @@ var Controller = {
 window.onload = function () {
   View.init();
   grid = Controller.initGrid(View.canvas.width, View.canvas.height);
-
-  var maze = generateMaze();
 }

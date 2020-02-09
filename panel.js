@@ -95,17 +95,19 @@ function getAlgo()
 }
 
 run = document.getElementById("run_button");
+var generatingMaze = false;
 
-run.onclick = function()
-{
+run.onclick = function() {
   if(mazeAlgorithm == "0" || pathAlgorithm == "0")
   {
      //the user has not selected both a maze and a path algorithm
      alert("You must select a Maze Generating Algorithm and a Path Finding Algorithm!");
   }
-  else
-  {
+  else if (generatingMaze) {
+     alert("Please let the maze finish generating!");
+  } else {
     View.reinitializeGrid();
     generateMaze();
   }
+  generatingMaze = true;
 };

@@ -72,7 +72,7 @@ function generateMaze() {
         draw();
 
         // Keep requesting new frames
-        if (!stopLoop) {
+        if (!stopLoop ) {
             window.requestAnimationFrame(gameLoop);
         }
     }
@@ -82,9 +82,9 @@ function generateMaze() {
 
     function draw(){
         var test = 0;
-        while (test < 80) {
+        while (test < 150) {
             if (maze[row][col] == 'x') {
-                View.setUnwalkable(col, row, grid, '#000000');
+                View.setUnwalkable(col, row, grid, '#000000', 'wall');
             } else if (maze[row][col] == 's') {
                 View.setUnwalkable(col, row, grid, '#03ff03');
             } else if (maze[row][col] == 'f') {
@@ -97,7 +97,9 @@ function generateMaze() {
                     row++;
                 } else {
                     stopLoop = true;
+                    generatingMaze = false;
                     solveMaze(maze);
+                    break;
                 }
             }
             test++
