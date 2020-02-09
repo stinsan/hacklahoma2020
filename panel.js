@@ -16,7 +16,7 @@ max_button.onclick = function()
   max_button.style.visibility = "hidden";
 };
 
-open_button = document.getElementById("run_button");
+open_button = document.getElementById("info_button");
 modal = document.getElementById("modal");
 close_button = document.getElementById("close_button");
 
@@ -87,3 +87,11 @@ function getAlgo()
   // if (mazeAlorithm = something) {
   //  document.getElementBy
 }
+
+run = document.getElementById("run_button");
+
+run.onclick = function()
+{
+  View.reinitializeGrid();
+  generateMaze();
+};
