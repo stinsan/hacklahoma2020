@@ -32,7 +32,7 @@ canvas {
   height: 100%;
   overflow-x: hidden;
   border-radius: 10px;
-  background: rgba(209, 230, 252, 0.5);
+  background: rgba(209, 230, 252, 0.7);
 }
 
 h1{ /* Headers */
@@ -74,25 +74,20 @@ h1{ /* Headers */
   cursor: pointer;
 }
 
-.panel_buttons{ /* Panel buttons containing expand and minimize*/
+.panel_button { /* Panel buttons containing expand and minimize*/
+  display: flex;
+  align-items: center;
   position: absolute;
-  left: 82%;
+  left: 82.65%;
   top: 6%;
-  font-size: 20px;
+  font-size: 30px;
   background-color: #bfb;
   border-radius: 10px 0px 0px 10px;
   height: 10%;
+  transition-duration: 0.6s;
 }
 
-.max_button:hover{
-  cursor: pointer;
-}
-
-.max_button{/** Set max button to first be hidden **/
-  visibility: hidden;
-}
-
-.min_button:hover{
+.panel_button:hover {
   cursor: pointer;
 }
 
@@ -130,6 +125,7 @@ h1{ /* Headers */
 }
 
 .settings_maze label:hover {
+  transition-duration: 0.4s;
   background-color: #dfd;
 }
 
@@ -175,6 +171,7 @@ h1{ /* Headers */
 }
 
 .settings_path label:hover {
+  transition-duration: 0.4s;
   background-color: #dfd;
 }
 
@@ -199,7 +196,8 @@ h1{ /* Headers */
 }
 
 #run_button:hover{
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  transition-duration: 0.4s;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 5px 5px 0 rgba(0,0,0,0.19);
 }
 
 .settings_info {
@@ -218,9 +216,11 @@ h1{ /* Headers */
   height:20%;
   font-size: 100%;
   font-weight: bold;
-  border: 2px solid #bfb;
+  border: 5px solid #bfb;
+  padding: 0;
 }
 
 #info_button:hover{
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  transition-duration: 0.4s;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 5px 5px 0 rgba(0,0,0,0.19);
 }

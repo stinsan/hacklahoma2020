@@ -1,25 +1,34 @@
-min_button = document.getElementById("min_button");
-max_button = document.getElementById("max_button");
+panelButton = document.getElementById("panel_button");
 panel = document.getElementById("settings_panel");
-min_button.onclick = function()
-{
+var panelIsOpen = true;
+function minimizePanel () {
   //minimizing the settings panel
   panel.style.width = "0";
   panel.style.marginLeft = "251px";
-  min_button.style.visibility = "hidden";
-  max_button.style.visibility = "visible";
-};
-max_button.onclick = function()
-{
-  //maximizing the settings panel
-  //panel.style.visibility = "visible";
+  panelButton.style.marginLeft = "251px";
+}
+
+function maximizePanel () {
   panel.style.width = "250px";
   panel.style.marginLeft = "0px";
-  panel.overflow_x = "hidden";
-  panel.left = calc("100%" - "250px");
-  min_button.style.visibility = "visible";
-  max_button.style.visibility = "hidden";
-};
+  panelButton.style.marginLeft = "0px";
+}
+
+function openClosePanel () {
+  if (panelIsOpen) {
+    minimizePanel();
+    panelIsOpen = false;
+    panelButton.innerHTML = "+";
+  }
+  else {
+    maximizePanel();
+    panelIsOpen = true;
+    panelButton.innerHTML = "&times;";
+  }
+}
+
+panel_button.addEventListener("click", openClosePanel);
+
 
 open_button = document.getElementById("info_button");
 modal = document.getElementById("modal");
