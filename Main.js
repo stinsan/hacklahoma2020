@@ -42,7 +42,8 @@ var View = {
     }
 
     context.stroke(); // Show the grid on the screen.
-  }
+  },
+  
   // Helper function to convert the page coordinate to grid coordinate
   toGridCoordinate: function(pageX, pageY) {
       return [

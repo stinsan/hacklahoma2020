@@ -5,7 +5,7 @@ min_button.onclick = function()
 {
   //panel.style.visibility = "hidden";
   panel.style.width = "0";
-  
+
   //panel.style.marginLeft = "200px";
   min_button.style.visibility = "hidden";
   max_button.style.visibility = "visible";
@@ -17,7 +17,7 @@ max_button.onclick = function()
   max_button.style.visibility = "hidden";
 };
 
-open_button = document.getElementById("run_button");
+open_button = document.getElementById("info_button");
 modal = document.getElementById("modal");
 close_button = document.getElementById("close_button");
 
@@ -88,3 +88,11 @@ function getAlgo()
   // if (mazeAlorithm = something) {
   //  document.getElementBy
 }
+
+run = document.getElementById("run_button");
+
+run.onclick = function()
+{
+  View.reinitializeGrid();
+  generateMaze();
+};
