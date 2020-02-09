@@ -5,8 +5,7 @@ min_button.onclick = function()
 {
   //panel.style.visibility = "hidden";
   panel.style.width = "0";
-  
-  //panel.style.marginLeft = "200px";
+  panel.style.marginLeft = "251px";
   min_button.style.visibility = "hidden";
   max_button.style.visibility = "visible";
 };

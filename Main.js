@@ -42,7 +42,7 @@ var View = {
     }
 
     context.stroke(); // Show the grid on the screen.
-  }
+  },
   // Helper function to convert the page coordinate to grid coordinate
   toGridCoordinate: function(pageX, pageY) {
       return [
@@ -91,4 +91,5 @@ var Controller = {
 window.onload = function () {
   View.init();
   grid = Controller.initGrid(View.canvas.width, View.canvas.height);
+  generateMaze();
 }
