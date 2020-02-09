@@ -3,7 +3,7 @@ max_button = document.getElementById("max_button");
 panel = document.getElementById("settings_panel");
 min_button.onclick = function()
 {
-  //panel.style.visibility = "hidden";
+  //minimizing the settings panel
   panel.style.width = "0";
   panel.style.marginLeft = "251px";
   min_button.style.visibility = "hidden";
@@ -11,7 +11,12 @@ min_button.onclick = function()
 };
 max_button.onclick = function()
 {
-  panel.style.visibility = "visible";
+  //maximizing the settings panel
+  //panel.style.visibility = "visible";
+  panel.style.width = "250px";
+  panel.style.mariginLeft = "0px";
+  panel.overflow_x = "hidden";
+  panel.left = calc("100%" - "250px");
   min_button.style.visibility = "visible";
   max_button.style.visibility = "hidden";
 };
