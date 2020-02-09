@@ -104,7 +104,7 @@ run.onclick = function() {
      alert("You must select a Maze Generating Algorithm and a Path Finding Algorithm!");
   }
   else if (generatingMaze) {
-    alert("Please wait for maze to finish generating!");
+    
   } else {
     View.reinitializeGrid();
     generateMaze();
