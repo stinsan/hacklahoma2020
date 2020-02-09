@@ -8,7 +8,7 @@ var View = {
     this.canvas.width = document.documentElement.clientWidth;   // Set width to browser width.
     this.canvas.height = document.documentElement.clientHeight; // Set height to browser height.
 
-    this.gridSize = 20; // Size of a grid square.
+    this.gridSize = 15; // Size of a grid square.
     this.context.lineWidth = "0.3";
     this.context.strokeStyle = "green";
 
