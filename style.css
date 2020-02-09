@@ -9,7 +9,7 @@ canvas {
   display:block;
 } /* To remove the scrollbars */
 
-.main{
+.main{ /* */
   display:flex;
   flex-direction: row;
 }
@@ -24,7 +24,7 @@ canvas {
   left: 83%;
   top: 3%;
   width: 250px;
-  height: 500px;
+  height: 550px;
   border-radius: 15px;
   background: rgba(171, 205, 239, 0.7)
 }
@@ -91,6 +91,14 @@ h1{ /* Headers */
 
 /** radio buttons **/
 
+.settings_maze {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+
 .settings_maze input[type="radio"] {
   opacity: 0;
   position: fixed;
@@ -155,6 +163,14 @@ h1{ /* Headers */
 
 /** run button **/
 .settings_run {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+
+.settings_info {
   margin-top: 20px;
   display: flex;
   justify-content: center;
