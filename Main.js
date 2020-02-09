@@ -1,3 +1,4 @@
+
 var View = {
   nodeSize: 15, // Size of a grid square.
 
@@ -11,6 +12,10 @@ var View = {
     this.context.lineWidth = "0.3";
     this.context.strokeStyle = "green";
     this.makeGrid(); // Makes the grid.
+    this.canvas.addEventListener('keydown', doKeyDown, true);
+    function doKeyDown(e) {
+      console.log("HELLO");
+    }
   },
 
   // Makes the grid.
@@ -46,14 +51,13 @@ var View = {
       ];
   },
 
-  setUnwalkable: function(gridX, gridY, grid) {
+  setUnwalkable: function(gridX, gridY, grid, color, image) {
     context = this.context;
     nodeSize = this.nodeSize;
     pageCoords = View.toPageCoordinate(gridX, gridY);
 
-    context.beginPath();
+    context.fillStyle = color;
     context.fillRect(pageCoords[0], pageCoords[1], nodeSize, nodeSize);
-    context.stroke();
 
     grid.setWalkableAt(gridX, gridY, false);
   },
@@ -79,5 +83,5 @@ window.onload = function () {
   View.init();
   grid = Controller.initGrid(View.canvas.width, View.canvas.height);
 
-  generateMaze();
+  var maze = generateMaze();
 }

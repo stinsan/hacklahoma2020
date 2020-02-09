@@ -47,12 +47,63 @@ function generateMaze() {
         }
     }
 
-    for (var i = 0; i < maze.length; i++) {
-        for (var j = 0; j < maze[i].length; j++) {
-            if (maze[i][j] == 'x') {
-                View.setUnwalkable(j, i, grid);
-            }
+    while (true) {
+        var start = Math.floor(Math.random() * width * 2);
+        if (maze[height * 2 - 1][start] == 'o') {
+            maze[height * 2][start] = 's';
+            break;
         }
     }
+
+    while (true) {
+        var finish = Math.floor(Math.random() * height * 2);
+        if (maze[finish][1] == 'o') {
+            maze[finish][0] = 'f';
+            break;
+        }
+    }
+
+    var stopLoop = false;
+
+    window.requestAnimationFrame(gameLoop);
+
+    function gameLoop(timeStamp){
+
+        draw();
+
+        // Keep requesting new frames
+        if (!stopLoop) {
+            window.requestAnimationFrame(gameLoop);
+        }
+    }
+
+    var col = 0;
+    var row = 0;
+
+    function draw(){
+        var test = 0;
+        while (test < 80) {
+            if (maze[row][col] == 'x') {
+                View.setUnwalkable(col, row, grid, '#000000');
+            } else if (maze[row][col] == 's') {
+                View.setUnwalkable(col, row, grid, '#03ff03');
+            } else if (maze[row][col] == 'f') {
+                View.setUnwalkable(col, row, grid, '#ff0000');
+            }
+            col++;
+            if (col == width * 2 + 1) {
+                col = 0;
+                if (row < height * 2) {
+                    row++;
+                } else {
+                    stopLoop = true;
+                    solveMaze(maze);
+                }
+            }
+            test++
+        }
+    }
+
+    return maze;
 
 }
