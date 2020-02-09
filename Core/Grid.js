@@ -89,7 +89,6 @@ Grid.prototype.isInside = function(x, y) {
  * @param {boolean} walkable - Whether the position is walkable.
  */
 Grid.prototype.setWalkableAt = function(x, y, walkable) {
-    console.log(x, y);
     this.nodes[y][x].walkable = walkable;
 };
 

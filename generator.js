@@ -1,8 +1,8 @@
 function generateMaze() {
 
-    var width = 63;
-    var height = 31;
-
+    var width = Math.floor(View.canvas.width / View.nodeSize / 2) - 1;
+    var height = Math.floor(View.canvas.height / View.nodeSize / 2) - 1;
+    
     var row = (height * 2) - 1;
     var col = 1;
 
