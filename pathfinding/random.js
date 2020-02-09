@@ -13,6 +13,7 @@ function solveMaze(maze) {
     }
 
     var stopLoop = false;
+    stopPathfinding = false;
 
     window.requestAnimationFrame(gameLoop);
 
@@ -20,7 +21,7 @@ function solveMaze(maze) {
 
         draw();
 
-        if (!stopLoop) {
+        if (!stopLoop && !stopPathfinding) {
             window.requestAnimationFrame(gameLoop);
         }
     }
@@ -29,6 +30,9 @@ function solveMaze(maze) {
 
         var time = 0;
         while (time < 20) {
+            if (stopPathfinding) {
+                break;
+            }
 
             var dir = Math.floor(Math.random() * 4);
             if (dir == 0) {         // UP

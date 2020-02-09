@@ -1,3 +1,4 @@
+var stopPathfinding = false;
 
 var View = {
   nodeSize: 15, // Size of a grid square.
@@ -35,6 +36,7 @@ var View = {
   },
 
   reinitializeGrid: function() {
+    stopPathfinding = true;
     context = this.context;   // Get the canvas context.
     nodeSize = this.nodeSize; // Get the size of a grid square.
     context.clearRect(0, 0, this.canvas.width, this.canvas.height); // Clear canvas
