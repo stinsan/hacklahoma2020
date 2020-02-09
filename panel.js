@@ -31,11 +31,12 @@ close_button.onclick = function()
   modal.style.display = "none";
 };
 
+
+var mazeAlgorithm = "0";
+var pathAlgorithm = "0";
 //get the algorithms that were chosen
 function getAlgo()
 {
-  var mazeAlgorithm;
-  var pathAlgorithm;
 
   var mazes = document.getElementsByName('maze_algorithm');
   for(i = 0; i < mazes.length; i++)
@@ -93,6 +94,14 @@ run = document.getElementById("run_button");
 
 run.onclick = function()
 {
-  View.reinitializeGrid();
-  generateMaze();
+  if(mazeAlgorithm == "0" || pathAlgorithm == "0")
+  {
+     //the user has not selected both a maze and a path algorithm
+     alert("You must select a Maze Generating Algorithm and a Path Finding Algorithm!");
+  }
+  else
+  {
+    View.reinitializeGrid();
+    generateMaze();
+  }
 };
