@@ -83,7 +83,7 @@ var Controller = {
   initGrid: function(width, height) {
     var matrix = [];
 
-    for (var i = 0; i < height; i++) {
+    for (var i = 0;   i < height; i++) {
       matrix[i] = [];
       for (var j = 0; j < width; j++) {
         matrix[i][j] = 0;
@@ -98,6 +98,4 @@ var Controller = {
 window.onload = function () {
   View.init();
   grid = Controller.initGrid(View.canvas.width, View.canvas.height);
-
-  var maze = generateMaze();
 }
