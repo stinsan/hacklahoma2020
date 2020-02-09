@@ -108,6 +108,6 @@ run.onclick = function() {
   } else {
     View.reinitializeGrid();
     generateMaze();
+    generatingMaze = true;
   }
-  generatingMaze = true;
 };
