@@ -1,5 +1,7 @@
+/***
+ * The majority of this file is from https://github.com/qiao/PathFinding.js/blob/master/src/core/Grid.js
+ */
 /**
- * Grid to Node is like LinkedList to LinkedListNode
  * @constructor
  * @param {number} width
  * @param {number} height
