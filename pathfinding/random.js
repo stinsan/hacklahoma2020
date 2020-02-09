@@ -1,4 +1,4 @@
-function solveMaze(maze) {
+function solveMazeRandom(maze) {
 
     var row;
     var col;
