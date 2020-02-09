@@ -26,6 +26,7 @@ var View = {
 
     context.stroke(); // Show the grid on the screen.
   },
+
 }
 
 // Initialize everything on website load.
