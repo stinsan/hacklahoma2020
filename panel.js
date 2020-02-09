@@ -14,7 +14,7 @@ max_button.onclick = function()
   //maximizing the settings panel
   //panel.style.visibility = "visible";
   panel.style.width = "250px";
-  panel.style.mariginLeft = "0px";
+  panel.style.marginLeft = "0px";
   panel.overflow_x = "hidden";
   panel.left = calc("100%" - "250px");
   min_button.style.visibility = "visible";
