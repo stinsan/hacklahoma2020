@@ -93,6 +93,6 @@ run = document.getElementById("run_button");
 
 run.onclick = function()
 {
-  View.makeGrid();
+  View.reinitializeGrid();
   generateMaze();
 };
