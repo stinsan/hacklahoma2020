@@ -42,7 +42,7 @@ function solveMazeWall(maze) {
     function draw() {
 
         var time = 0;
-        while (time < 20) {
+        while (time < 15) {
             if (stopPathfinding) {
                 break;
             }
