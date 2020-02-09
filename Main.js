@@ -26,8 +26,8 @@ var View = {
 
     context.beginPath(); // Begin drawing squares.
     // Draw the whole grid.
-    for (var i = 0; i < Math.floor(this.canvas.height / nodeSize); i++) {
-      for (var j = 0; j < Math.floor(this.canvas.width / nodeSize); j++) {
+    for (var i = 0; i < Math.floor(this.canvas.height / nodeSize) - 1; i++) {
+      for (var j = 0; j < Math.floor(this.canvas.width / nodeSize) - 1; j++) {
         context.rect(j*nodeSize, i*nodeSize, nodeSize, nodeSize);
       }
     }
@@ -42,8 +42,8 @@ var View = {
     context.clearRect(0, 0, this.canvas.width, this.canvas.height); // Clear canvas
     context.beginPath(); // Begin drawing squares.
     // Draw the whole grid.
-    for (var i = 0; i < Math.floor(this.canvas.height / nodeSize); i++) {
-      for (var j = 0; j < Math.floor(this.canvas.width / nodeSize); j++) {
+    for (var i = 0; i < Math.floor(this.canvas.height / nodeSize) - 1; i++) {
+      for (var j = 0; j < Math.floor(this.canvas.width / nodeSize) - 1; j++) {
         context.rect(j*nodeSize, i*nodeSize, nodeSize, nodeSize);
       }
     }

@@ -98,7 +98,11 @@ function generateMaze() {
                 } else {
                     stopLoop = true;
                     generatingMaze = false;
-                    solveMaze(maze);
+                    if (pathAlgorithm == 'path1') {
+                        solveMazeRandom(maze);
+                    } else {
+                        solveMazeWall(maze);
+                    }
                     break;
                 }
             }
