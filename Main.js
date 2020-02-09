@@ -1,5 +1,5 @@
 var View = {
-  nodeSize: 20, // Size of a grid square.
+  nodeSize: 15, // Size of a grid square.
 
   // Initialize the canvas.
   init: function () {
@@ -8,6 +8,8 @@ var View = {
     this.context = this.canvas.getContext('2d');
     this.canvas.width = document.documentElement.clientWidth;   // Set width to browser width.
     this.canvas.height = document.documentElement.clientHeight; // Set height to browser height.
+    this.context.lineWidth = "0.3";
+    this.context.strokeStyle = "green";
     this.makeGrid(); // Makes the grid.
   },
 
@@ -18,8 +20,8 @@ var View = {
 
     context.beginPath(); // Begin drawing squares.
     // Draw the whole grid.
-    for (var i = 0; i < this.canvas.height / nodeSize; i++) {
-      for (var j = 0; j < this.canvas.width / nodeSize; j++) {
+    for (var i = 0; i < Math.floor(this.canvas.height / nodeSize); i++) {
+      for (var j = 0; j < Math.floor(this.canvas.width / nodeSize); j++) {
         context.rect(j*nodeSize, i*nodeSize, nodeSize, nodeSize);
       }
     }
@@ -53,7 +55,7 @@ var View = {
     context.fillRect(pageCoords[0], pageCoords[1], nodeSize, nodeSize);
     context.stroke();
 
-    grid.setWalkableAt(gridX, gridY, true);
+    grid.setWalkableAt(gridX, gridY, false);
   },
 }
 
@@ -76,5 +78,4 @@ var Controller = {
 window.onload = function () {
   View.init();
   grid = Controller.initGrid(View.canvas.width, View.canvas.height);
-  View.setUnwalkable(1, 1, grid);
 }
