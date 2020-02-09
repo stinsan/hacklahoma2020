@@ -1,3 +1,4 @@
+# Mazetrix
 
 Our hack is a website with maze making and path finding algorithms with live animation to show the process. 
 1. Select your algorithm
