@@ -99,6 +99,7 @@ function generateMaze() {
                     stopLoop = true;
                     generatingMaze = false;
                     solveMaze(maze);
+                    break;
                 }
             }
             test++
