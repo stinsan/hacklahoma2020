@@ -47,6 +47,10 @@ function generateMaze() {
         }
     }
 
+    while (true) {
+        var start = Math.floor(Math);
+    }
+
     for (var i = 0; i < maze.length; i++) {
         for (var j = 0; j < maze[i].length; j++) {
             if (maze[i][j] == 'x') {
