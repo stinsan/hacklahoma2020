@@ -6,16 +6,20 @@ html, body {
 }
 
 canvas {
-  display:block;
+  display: block;
+  width: 100%;
 } /* To remove the scrollbars */
+
+.canvas_wrapper {
+  margin:0;
+  padding:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 .main{
   display:flex;
   flex-direction: row;
-}
-
-.canvas{
-  position: absolute;
 }
 
 .settings_panel{ /* Side panel with settings */
