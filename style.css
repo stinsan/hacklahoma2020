@@ -4,31 +4,33 @@ html, body {
   margin:0;   /* to remove the top and left whitespace */
   padding:0;
   color: #535D47;
+  overflow-y: hidden;
 }
 
 canvas {
   width: 95%;
+  height: 95%;
 } /* To remove the scrollbars */
 
 .canvas_wrapper {
   margin:0;
-  padding:0;
+  padding-top:2.5%;
   display: flex;
   align-content: center;
   justify-content: center;
 }
 
-.main{
+.main {
   display:flex;
   flex-direction: row;
 }
 
-.settings_panel{ /* Side panel with settings */
-  width: 250px;
+.settings_panel { /* Side panel with settings */
+  width: 17%;
   position: absolute;
   transition-duration: 0.6s;
   float:right;
-  left: calc(100% - 250px);
+  left: 83%;
   height: 100%;
   overflow-x: hidden;
   border-radius: 10px;
@@ -78,7 +80,7 @@ h1{ /* Headers */
   display: flex;
   align-items: center;
   position: absolute;
-  left: 82.65%;
+  left: 82%;
   top: 6%;
   font-size: 30px;
   background-color: #bfb;
