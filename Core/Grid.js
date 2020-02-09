@@ -1,11 +1,9 @@
-var Node = require('./Node');
-
 /**
- * Grid to Node is like LinkedList to LinkedListNode 
- * @constructor 
- * @param {number}
- * @param {number}
- * @param {Array<Array<(boolean)}
+ * Grid to Node is like LinkedList to LinkedListNode
+ * @constructor
+ * @param {number} width
+ * @param {number} height
+ * @param {Array<Array<(boolean)>>} matrix
  * */
 
  function Grid(width, height, matrix){
@@ -15,12 +13,11 @@ var Node = require('./Node');
      this.nodes = this._buildNodes(width, height, matrix);
  }
 
-
  /**
-  * @private 
+  * @private
   * @param {number} width
   * @param {number} height
-  * @param {Array<Array<(boolean)}
+  * @param {Array<Array<(boolean)>>} matrix
   * @see Grid
   */
  Grid.prototype._buildNodes = function(width, height, matrix) {
@@ -30,7 +27,7 @@ var Node = require('./Node');
     for (i = 0; i < height; ++i) {
         nodes[i] = new Array(width);
         for (j = 0; j < width; ++j) {
-            nodes[i][j] = new Node(j, i);
+            nodes[i][j] = new GridNode(j, i);
         }
     }
 
@@ -92,6 +89,7 @@ Grid.prototype.isInside = function(x, y) {
  * @param {boolean} walkable - Whether the position is walkable.
  */
 Grid.prototype.setWalkableAt = function(x, y, walkable) {
+    console.log(x, y);
     this.nodes[y][x].walkable = walkable;
 };
 
@@ -118,9 +116,9 @@ Grid.prototype.getNeighbors = function(node) {
         y = node.y,
         neighbors = [],
         s0 = false,
-        s1 = false, 
-        s2 = false, 
-        s3 = false, 
+        s1 = false,
+        s2 = false,
+        s3 = false,
         nodes = this.nodes;
 
     // ↑
@@ -165,7 +163,7 @@ Grid.prototype.clone = function() {
     for (i = 0; i < height; ++i) {
         newNodes[i] = new Array(width);
         for (j = 0; j < width; ++j) {
-            newNodes[i][j] = new Node(j, i, thisNodes[i][j].walkable);
+            newNodes[i][j] = new GridNode(j, i, thisNodes[i][j].walkable);
         }
     }
 
@@ -173,5 +171,3 @@ Grid.prototype.clone = function() {
 
     return newGrid;
 };
-
-module.exports = Grid;
