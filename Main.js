@@ -20,8 +20,8 @@ var View = {
 
     context.beginPath(); // Begin drawing squares.
     // Draw the whole grid.
-    for (var i = 0; i < Math.floor(this.canvas.height / nodeSize) - 1; i++) {
-      for (var j = 0; j < Math.floor(this.canvas.width / nodeSize) - 1; j++) {
+    for (var i = 0; i < Math.floor(this.canvas.height / nodeSize); i++) {
+      for (var j = 0; j < Math.floor(this.canvas.width / nodeSize); j++) {
         context.rect(j*nodeSize, i*nodeSize, nodeSize, nodeSize);
       }
     }
@@ -29,7 +29,20 @@ var View = {
     context.stroke(); // Show the grid on the screen.
   },
 
+  reinitializeGrid: function() {
+    context = this.context;   // Get the canvas context.
+    nodeSize = this.nodeSize; // Get the size of a grid square.
+    context.clearRect(0, 0, this.canvas.width, this.canvas.height); // Clear canvas
+    context.beginPath(); // Begin drawing squares.
+    // Draw the whole grid.
+    for (var i = 0; i < Math.floor(this.canvas.height / nodeSize); i++) {
+      for (var j = 0; j < Math.floor(this.canvas.width / nodeSize); j++) {
+        context.rect(j*nodeSize, i*nodeSize, nodeSize, nodeSize);
+      }
+    }
 
+    context.stroke(); // Show the grid on the screen.
+  }
   // Helper function to convert the page coordinate to grid coordinate
   toGridCoordinate: function(pageX, pageY) {
       return [
@@ -78,6 +91,4 @@ var Controller = {
 window.onload = function () {
   View.init();
   grid = Controller.initGrid(View.canvas.width, View.canvas.height);
-
-  generateMaze();
 }
